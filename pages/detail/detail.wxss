@@ -1,0 +1,84 @@
+/**index.wxss**/
+.container{
+	width:100%;
+	height: auto;
+}
+.container .banner{
+	width:100%;
+	height: 100rpx;
+	position: relative;
+}
+.container .banner image{
+	width:100%;
+	height:100%;
+}
+.container .authorlogo{
+	width:200rpx;
+	height: 200rpx;
+	border-radius: 100rpx;
+	position: absolute;
+	top:10rpx;
+	right:30rpx;
+	background-color: #fff;
+	border: 5rpx solid #fff;
+}
+.container .authorlogo image{
+	border-radius: 50%;
+}
+.container .author{
+	width:92%;
+	padding:0 4%;
+}
+.container .author .name{
+	height: 150rpx;
+	line-height: 150rpx;
+	width: 100%;
+	font-size:68rpx;
+}
+.container .desc{
+	height: 80rpx;
+	line-height: 80rpx;
+	width: 100%;
+	font-size:32rpx;
+}
+.container .desc .num label{
+	color:#fce5df;
+	font-size:36rpx;
+	font-weight: bold;
+}
+.container .desc .num text{
+	margin-right:20rpx;
+}
+.container .desc .share{
+	width:200rpx;
+	height: 80rpx;
+}
+.container .desc .share button{
+	width:100%;
+	height: 100%;
+	line-height: 80rpx;
+	color:#fff;
+	font-size:36rpx;
+	background-color: #fce5df;
+	border-radius: 40rpx;
+}  
+.container .create{
+	height: 100rpx;
+	line-height: 100rpx;
+	font-size:32rpx;
+	color:#666;
+} 
+/*commom css*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}

@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="listwraper">
+        <view class="listitem">
+            <view class="list">
+                <view>大声说出来,好开心啊！</view> 
+            </view>
+            <view class="show">
+                <image src="../../img/banner.jpg" mode="aspectFill"/>
+            </view>
+            <view class="desc clearfix">
+                <div class="author left">
+                    <text>06-28</text>
+                </div>
+                <div class="customer right">
+                    <text>500阅读</text>
+                    <text>1645评论</text>
+                    <text>4444点赞</text>
+                </div>
+            </view>
+        </view>
+    </view>
+</view>

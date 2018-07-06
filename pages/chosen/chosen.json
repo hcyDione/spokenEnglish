@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "最新",
+  "usingComponents": {
+    "lister": "/component/list/list"
+  }
+}

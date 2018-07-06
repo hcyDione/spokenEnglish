@@ -1,0 +1,32 @@
+/**index.wxss**/
+.container{
+	width:100%;
+	height: auto;
+}
+.container .login{
+    margin-top:150rpx;
+}
+.container .photo{
+	width:390rpx;
+	height: 286rpx;
+	margin:0 auto;
+	margin-bottom:40rpx;
+}
+.container .photo image{
+	width:100%;
+	height: 100%;
+}
+.container button{
+	width:200rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+	background-color: #fce5df;
+	border-radius: 10rpx;
+	font-size:32rpx;
+}
+.container .txt{
+	margin-top:40rpx;
+	text-align: center;
+	font-size:28rpx;
+	color:#999;
+}

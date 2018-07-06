@@ -1,0 +1,20 @@
+/**index.wxss**/
+.container{
+	width:100%;
+	height: auto;
+	display: auto;
+}
+.container .add{
+	position:absolute;
+	bottom:50rpx;
+	right:50rpx;
+	font-size:60rpx;
+	color:#fff;
+	width:100rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	border-radius: 50%;
+	text-align:center;
+	background-color: #fce5df;
+	box-shadow: 6rpx 6rpx 6rpx #bfbfbf;
+}

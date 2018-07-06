@@ -1,0 +1,65 @@
+.container{
+	width:100%;
+	height: auto;
+	display: block;
+}
+.listitem{
+	widows: 92%;
+	padding: 0 4%;
+	height: 592rpx;
+	display: block;
+	border-bottom:25rpx solid #f1f2f6;
+}
+.listitem .list{
+	height: 100rpx;
+	line-height: 100rpx;
+	font-size:36rpx;
+}
+.listitem .show{
+	height: 380rpx;
+	width: 100%;
+}
+.listitem .show image{
+	height: 100%;
+	width: 100%;
+}
+.listitem .desc{
+	height: 72rpx;
+	line-height: 72rpx;
+	width: 100%;
+	margin:20rpx 0rpx;
+	overflow: hidden;
+}
+.listitem .desc .author{
+	height: 100%;
+	font-size:28rpx;
+	color:#999;
+}
+.listitem .author image{
+	height: 72rpx;
+	width: 72rpx;
+	border-radius: 36rpx;
+	vertical-align: middle;
+	margin-right:20rpx;
+}
+.listitem .desc .customer{
+	font-size:28rpx;
+	color:#999;
+}
+.listitem .customer text{
+	margin-left:20rpx;
+}
+/*commom css*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.left{
+	float:left;
+}
+.right{
+	float:right;
+}

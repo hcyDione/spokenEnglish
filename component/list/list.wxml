@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="listwraper">
+        <view class="listitem" catchtap="openDetail">
+            <view class="list">
+                <view>大声说出来,好开心啊！</view> 
+            </view>
+            <view class="show">
+                <image src="../../img/banner.jpg" mode="aspectFill"/>
+            </view>
+            <view class="desc clearfix">
+                <div class="author left">
+                    <image src="../../img/cool.png" mode="aspectFill"/>
+                    <text>Dione</text>
+                </div>
+                <div class="customer right">
+                    <text>500阅读</text>
+                    <text>1645评论</text>
+                    <text>4444点赞</text>
+                </div>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="login">
+        <view class="photo">
+            <image src="../../img/login.png" mode="aspectFill"/>
+        </view>
+        <view class="btn">
+            <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">登录</button>
+        </view>
+        <view class='txt'>
+            <text>需要获取您的授权,才能为您提供更优质的服务</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "创作",
+  "usingComponents": {
+    "nocontent": "/component/nocontent/nocontent"
+  }
+}

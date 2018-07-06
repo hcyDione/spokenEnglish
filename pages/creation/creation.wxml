@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+    <nocontent>
+        <view slot="footer">还没有作品哦</view>
+    </nocontent>
+    <view class="add">+</view>
+</view>

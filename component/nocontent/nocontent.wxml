@@ -1,0 +1,9 @@
+<!--没有内容显示的组件-->
+<view class="wrapper">
+	<slot name="header"></slot>
+    <view class="image">
+        <image src="../../img/no.png" mode="widthFix"/>
+    </view>
+    <slot name="footer"></slot>
+</view>
+

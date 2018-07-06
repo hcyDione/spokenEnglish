@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "口语秀",
+  "usingComponents": {
+      "mylist": "/component/mylist/mylist"
+  }
+}
