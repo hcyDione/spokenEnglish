@@ -3,11 +3,11 @@
     <view class="banner">
         <image src="../../img/person.png" mode="aspectFill"/>
         <view class="authorlogo">
-            <image src="../../img/cool.png" mode="aspectFill"/>
+            <image src="{{logo}}" mode="aspectFill"/>
         </view> 
     </view>
     <view class="author">
-        <view class="name"><text>Dione</text></view>
+        <view class="name"><text>{{name}}</text></view>
         <view class="desc clearfix">
             <view class="num left">
                 <text>0关注</text>

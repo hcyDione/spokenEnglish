@@ -1,23 +1,73 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="banner">
-        <image src="../../img/person.png" mode="aspectFill"/>
-        <view class="authorlogo">
-            <image src="../../img/cool.png" mode="aspectFill"/>
-        </view> 
-    </view>
-    <view class="author">
-        <view class="name"><text>Dione</text></view>
-        <view class="desc clearfix">
-            <view class="num left">
-                <text>0关注</text>
-                <text>0粉丝</text>
+    <view class="uploader">
+        <view class="base-info">
+            <view class="base-text clearfix">
+                <view class="left">
+                    <text>标题</text>
+                </view> 
+                <view class="right">
+                   <input value="" placeholder="请输入标题" bindinput="titleInput"/>
+                </view>
             </view>
-            <view class="share right">
-                <button>分享</button>
+            <view class="base-logo clearfix">
+                <view class="left">
+                    <text>头像</text>
+                </view> 
+                <view class="right">
+                    <view wx:if="showlogo">
+                        <image src="{{logo}}"/>
+                    </view>
+                    <view class="mask" catchtap="uploadFile">
+                        <text>{{logoExp}}</text>
+                    </view>
+                </view>
             </view>
         </view>
-        <view class="create">创作了<label>8</label>篇文章</view>
+        <view class="base-content">
+            <view class="add-section">
+                <ul class="clearfix">
+                    <li id="add-text">
+                        <image src="../../img/text.png" mode="aspectFill"/>
+                        <view>文字</view>
+                    </li>
+                    <li id="add-img">
+                        <image src="../../img/images.png" mode="aspectFill"/>
+                        <view>图片</view>
+                    </li>
+                    <li id="add-video">
+                        <image src="../../img/video.png" mode="aspectFill"/>
+                        <view>视频</view>
+                    </li>
+                </ul>
+                <view class="add-icon">
+                    <image src="../../img/add_section.png"/>
+                </view>
+            </view>
+            <view class="section-container">
+                <view class="section-item" wx:for="{{matter}}" wx:key="index">
+                    <view class="content">
+                        <view class="left" wx:if="{{isvideo == false }}">
+                            <image src="../../img/icon_text.png" mode="aspectFill"/>
+                        </view>
+                        <view class="left video" wx:else>
+                            <image src="../../img/video-poster.png" mode="aspectFill"/>
+                            <view class="video-btn">
+                                <image src="../../img/icon-video.png" mode="aspectFill"/>
+                            </view>
+                        </view>
+                        <view class="right">
+                            <textarea placeholder="输入对应内容" value="" data-index="{{index}}" bindblur="summaryInput"/>
+                        </view>
+                    </view>
+                    <view class="del">
+                        <image src="../../img/del.png"/>
+                    </view>
+                </view> 
+            </view>
+        </view>
+        <view class="submit">
+            <button catchtap="doSubmit">提交</button>
+        </view>
     </view>
-    <mylist></mylist>
 </view>

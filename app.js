@@ -100,7 +100,7 @@ App({
                                           "avatarUrl" : data.avatarUrl,
                                       }
                                       self.globalData.decrydata = info 
-                                      /*wepy.request({
+                                      wx.request({
                                           url: 'http://127.0.0.1:8080/loginwx',
                                           data: info,
                                           method: 'POST',
@@ -109,9 +109,14 @@ App({
                                               'Authorization': token
                                           },
                                           success: function(res){
-                      
+                                              if (res.data.code == "0"){
+                                                  wx.setStorage({
+                                                      key: "userid",
+                                                      data: 4
+                                                  })
+                                              }
                                           }
-                                      })*/
+                                      })
                                   }
                               }
                           })

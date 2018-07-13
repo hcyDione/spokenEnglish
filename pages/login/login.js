@@ -51,8 +51,8 @@ Page({
                       "country" : data.country,
                       "avatarUrl" : data.avatarUrl,
                   }
-                  self.globalData.decrydata = info 
-                  /*wepy.request({
+                  app.globalData.decrydata = info 
+                  wepy.request({
                       url: 'http://127.0.0.1:8080/loginwx',
                       data: info,
                       method: 'POST',
@@ -61,9 +61,14 @@ Page({
                           'Authorization': token
                       },
                       success: function(res){
-                      
+                          if (res.data.code == "0"){
+                              wx.setStorage({
+                                  key: "userid",
+                                  data: 4
+                              })
+                          }
                       }
-                  })*/
+                  })
               }
           }
       })
@@ -74,7 +79,7 @@ Page({
         key: 'token',
         success: function(res) {
             this.token = res.data
-            this.setdata({
+            this.setData({
                 token: this.token,
                 sessionkey: this.sessionkey,
             })
