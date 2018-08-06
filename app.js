@@ -112,7 +112,7 @@ App({
                                               if (res.data.code == "0"){
                                                   wx.setStorage({
                                                       key: "userid",
-                                                      data: 4
+                                                      data: parseInt(res.data.data)
                                                   })
                                               }
                                           }

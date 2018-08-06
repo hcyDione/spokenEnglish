@@ -18,7 +18,7 @@
                     <view wx:if="showlogo">
                         <image src="{{logo}}"/>
                     </view>
-                    <view class="mask" catchtap="uploadFile">
+                    <view class="mask" catchtap="uploadLogo">
                         <text>{{logoExp}}</text>
                     </view>
                 </view>
@@ -27,15 +27,15 @@
         <view class="base-content">
             <view class="add-section">
                 <ul class="clearfix">
-                    <li id="add-text">
+                    <li id="add-text" catchtap="addText">
                         <image src="../../img/text.png" mode="aspectFill"/>
                         <view>文字</view>
                     </li>
-                    <li id="add-img">
+                    <li id="add-img" catchtap="addImg">
                         <image src="../../img/images.png" mode="aspectFill"/>
                         <view>图片</view>
                     </li>
-                    <li id="add-video">
+                    <li id="add-video" catchtap="addVideo">
                         <image src="../../img/video.png" mode="aspectFill"/>
                         <view>视频</view>
                     </li>
@@ -47,10 +47,13 @@
             <view class="section-container">
                 <view class="section-item" wx:for="{{matter}}" wx:key="index">
                     <view class="content">
-                        <view class="left" wx:if="{{isvideo == false }}">
+                        <view class="left" wx:if="{{item.isText == true }}">
                             <image src="../../img/icon_text.png" mode="aspectFill"/>
                         </view>
-                        <view class="left video" wx:else>
+                        <view class="left" wx:if="{{item.isImg == true }}">
+                            <image src="{{item.src}}" mode="aspectFill"/>
+                        </view>
+                        <view class="left video" wx:if="{{item.isVideo == true }}">
                             <image src="../../img/video-poster.png" mode="aspectFill"/>
                             <view class="video-btn">
                                 <image src="../../img/icon-video.png" mode="aspectFill"/>
