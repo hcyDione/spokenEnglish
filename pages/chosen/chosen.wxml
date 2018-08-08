@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view class="container">
-  <lister prop-content="{{content}}"></lister>
+  <lister content="{{content}}"></lister>
 </view>

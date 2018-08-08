@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "口语秀",
+  "navigationBarTitleText": "内容创作",
   "usingComponents": {
       "mylist": "/component/mylist/mylist"
   }

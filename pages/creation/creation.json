@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "创作",
   "usingComponents": {
-    "nocontent": "/component/nocontent/nocontent"
+    "nocontent": "/component/nocontent/nocontent",
+    "mylist": "/component/mylist/mylist"
   }
 }

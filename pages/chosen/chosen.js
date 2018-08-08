@@ -5,11 +5,10 @@ const app = getApp()
 Page({
   data: {
     token: '',
-    content: [{
-      title:'lalal',
-      logo: 'lalala',
-      file: 'bubuubu'
-    }],
+    userid: '',
+    logo: '',
+    name: '',
+    content: [],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -26,15 +25,45 @@ Page({
                   key: 'userid',
                   success: function(res) {
                       self.data.userid = res.data
-                      self.setData({
-                          token: self.data.token,
-                          userid: self.data.userid
-                      })
-                      self.getAlldata(self.data.token)
+                      var userinfo = app.globalData.userInfo
+                      if (userinfo == null) {
+                        setTimeout(function () {
+                            self.getUserInfo(self.data.token,self.data.userid)
+                        },1000)
+                      } else {
+                          self.logo = userinfo.avatarUrl
+                          self.name = userinfo.nickName
+                          self.setData({
+                              token: self.data.token,
+                              userid: self.data.userid,
+                              logo : self.logo,
+                              name: self.name,
+                          })
+                          self.getAlldata(self.data.token)
+                      }
                   } 
               })
           } 
       })
+  },
+  getUserInfo (token,userid) {
+    var self = this
+    var userinfo = app.globalData.userInfo
+    if (userinfo == null) {
+        setTimeout(function () {
+            self.getUserInfo(token,userid)
+        },1000)
+    } else {
+        self.logo = userinfo.avatarUrl
+        self.name = userinfo.nickName
+        self.setData({
+            token: token,
+            userid: userid,
+            logo : self.logo,
+            name: self.name,
+        })
+        self.getAlldata(token)
+    }
   },
   getAlldata (token) {
       var self = this
@@ -47,11 +76,15 @@ Page({
                 var data = res.data.data
                 for (var i=0 ;i<data.length; i++){
                   self.data.content.push({
-                    title: data.title,
-                    logo: data.logo,
-                    read: data.readnum + "",
-                    good: data.goodnum + "",
-                    share: data.sharenum + "",
+                    id:  data[i].workid+'',
+                    title: data[i].title,
+                    logo: data[i].logo,
+                    atval: self.logo,
+                    name: self.name,
+                    read: data[i].readnum + "",
+                    good: data[i].goodnum + "",
+                    share: data[i].sharenum + "",
+                    time: data[i].date.substr(0,10)
                   })
                 }
                 self.setData({

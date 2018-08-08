@@ -3,71 +3,79 @@
 	width:100%;
 	height: auto;
 }
-.container .banner{
-	width:100%;
-	height: 100rpx;
-	position: relative;
-}
-.container .banner image{
-	width:100%;
-	height:100%;
-}
-.container .authorlogo{
-	width:200rpx;
-	height: 200rpx;
-	border-radius: 100rpx;
-	position: absolute;
-	top:10rpx;
-	right:30rpx;
-	background-color: #fff;
-	border: 5rpx solid #fff;
-}
-.container .authorlogo image{
-	border-radius: 50%;
-}
-.container .author{
+.container .wrap{
 	width:92%;
+	height: auto;
 	padding:0 4%;
 }
-.container .author .name{
-	height: 150rpx;
-	line-height: 150rpx;
-	width: 100%;
-	font-size:68rpx;
+.top{
+	width:100%;
+	height: auto;
+	margin:20rpx 0;
 }
-.container .desc{
-	height: 80rpx;
-	line-height: 80rpx;
-	width: 100%;
+.top .title{
+	height: 50rpx;
 	font-size:32rpx;
+	color:#000000;
+	font-weight:bold;
 }
-.container .desc .num label{
-	color:#fce5df;
-	font-size:36rpx;
-	font-weight: bold;
+.top .author{
+	height: 72rpx;
+	font-size:28rpx;
+	color:#999;
 }
-.container .desc .num text{
+.top .author image{
+	height: 72rpx;
+	width: 72rpx;
+	border-radius: 36rpx;
+	vertical-align: middle;
 	margin-right:20rpx;
 }
-.container .desc .share{
-	width:200rpx;
-	height: 80rpx;
+.top .time{
+	display: inline-block;
+	margin-left:20rpx;
 }
-.container .desc .share button{
+.bottom{
 	width:100%;
-	height: 100%;
-	line-height: 80rpx;
-	color:#fff;
-	font-size:36rpx;
-	background-color: #fce5df;
-	border-radius: 40rpx;
-}  
-.container .create{
-	height: 100rpx;
-	line-height: 100rpx;
-	font-size:32rpx;
-	color:#666;
-} 
+	height: auto;
+	margin:20rpx 0;
+}
+.bottom .textWrap{
+	margin:10rpx 0;
+	line-height: 40rpx;
+	font-size: 28rpx;
+	color:#000000;
+}
+.bottom .imgWrap{
+	margin:10rpx 0;
+	line-height: 40rpx;
+	font-size: 28rpx;
+	color:#000000;
+}
+.bottom .imgWrap .img{
+	width:100%;
+	height: auto;
+}
+.bottom .imgWrap .img image{
+	width:100%;
+	display: block;
+}
+.bottom .videoWrap .video{
+	width:100%;
+	height: 225px;
+}
+.bottom .videoWrap .video video{
+	width: 100%;
+	height: 225px;
+	display: block;
+}
+.bottom .text{
+	width:100%;
+	margin-top:10rpx;
+	line-height: 40rpx;
+	font-size: 28rpx;
+	color:#000000;
+}
 /*commom css*/
 .clearfix:after {
 	content: ".";

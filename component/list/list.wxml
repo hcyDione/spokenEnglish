@@ -1,23 +1,25 @@
 <!--index.wxml-->
 <view class="container">
     <view class="listwraper">
-        <view class="listitem" catchtap="openDetail">
-            <view class="list">
-                <view>大声说出来,好开心啊！</view> 
-            </view>
-            <view class="show">
-                <image src="../../img/banner.jpg" mode="aspectFill"/>
-            </view>
-            <view class="desc clearfix">
-                <div class="author left">
-                    <image src="../../img/cool.png" mode="aspectFill"/>
-                    <text>Dione</text>
-                </div>
-                <div class="customer right">
-                    <text>500阅读</text>
-                    <text>1645评论</text>
-                    <text>4444点赞</text>
-                </div>
+        <view class="listitem" wx:for="{{content}}" wx:key="index">
+            <view data-id="{{item.id}}" catchtap="openDetail">
+                <view class="list">
+                    <view>{{item.title}}</view> 
+                </view>
+                <view class="show">
+                    <image src="../../img/banner.jpg" mode="aspectFill"/>
+                </view>
+                <view class="desc clearfix">
+                    <view class="author left">
+                        <image src="{{item.atval}}" mode="aspectFill"/>
+                        <text>{{item.name}}</text>
+                    </view>
+                    <view class="customer right">
+                        <text>{{item.read}}阅读</text>
+                        <text>{{item.share}}评论</text>
+                        <text>{{item.good}}点赞</text>
+                    </view>
+                </view>
             </view>
         </view>
     </view>

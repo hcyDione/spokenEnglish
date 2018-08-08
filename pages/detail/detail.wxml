@@ -1,23 +1,36 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="banner">
-        <image src="../../img/person.png" mode="aspectFill"/>
-        <view class="authorlogo">
-            <image src="../../img/cool.png" mode="aspectFill"/>
-        </view> 
-    </view>
-    <view class="author">
-        <view class="name"><text>Dione</text></view>
-        <view class="desc clearfix">
-            <view class="num left">
-                <text>0关注</text>
-                <text>0粉丝</text>
+    <view class="wrap">
+        <view class="top">
+            <view class="title">
+                {{title}}
             </view>
-            <view class="share right">
-                <button>分享</button>
+            <view class="author">
+                <image src="{{logo}}" mode="aspectFill"/>
+                <text>{{name}}</text>
+                <text class="time">{{time}}</text>
             </view>
         </view>
-        <view class="create">创作了<label>8</label>篇文章</view>
+        <view class="bottom" wx:for="{{content}}" wx:key="index">
+            <view class="textWrap" wx:if="{{item.isText == true}}">
+                {{item.text}}
+            </view>
+            <view class="imgWrap" wx:if="{{item.isImg == true}}">
+                <view class="img">
+                    <image src="../../img/banner.jpg" mode="widthFix"/>
+                </view>
+                <view class="text">
+                    {{item.text}}
+                </view>
+            </view>
+            <view class="videoWrap" wx:if="{{item.isVideo == true}}">
+                <view class="video">
+                    <video src="../../img/small.mp4" mode="aspectFill"/>
+                </view>
+                <view class="text">
+                    {{item.text}}
+                </view>
+            </view>
+        </view>
     </view>
-    <mylist></mylist>
 </view>

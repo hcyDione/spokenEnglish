@@ -8,7 +8,7 @@
 	padding: 0 4%;
 	height: 592rpx;
 	display: block;
-	border-top:25rpx solid #f1f2f6;
+	border-bottom:25rpx solid #f1f2f6;
 }
 .listitem .list{
 	height: 100rpx;

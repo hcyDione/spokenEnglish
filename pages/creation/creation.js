@@ -4,8 +4,11 @@ const app = getApp()
 
 Page({
   data: {
-    userInfo: {},
-    hasUserInfo: false,
+    token: '',
+    userid: '',
+    logo: '',
+    name: '',
+    content: [],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -15,39 +18,57 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+    var self = this
+      wx.getStorage({
+          key: 'token',
+          success: function(res) {
+              self.data.token = res.data
+              wx.getStorage({
+                  key: 'userid',
+                  success: function(res) {
+                      self.data.userid = res.data
+                      var userinfo = app.globalData.userInfo
+                      self.logo = userinfo.avatarUrl
+                      self.name = userinfo.nickName
+                      self.setData({
+                          token: self.data.token,
+                          userid: self.data.userid,
+                          logo : self.logo,
+                          name: self.name,
+                      })
+                      self.getAlldata(self.data.token)
+                  } 
+              })
+          } 
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+  getAlldata (token) {
+      var self = this
+      wx.request({
+        url: 'http://127.0.0.1:8080/content/get', 
+        method: 'GET',
+        header: { 'Authorization': token},
+        success: function(res) {
+            if (res.data.code == "0"){
+                var data = res.data.data
+                for (var i=0 ;i<data.length; i++){
+                  self.data.content.push({
+                    id:  data[i].workid,
+                    title: data[i].title,
+                    logo: data[i].logo,
+                    atval: self.logo,
+                    name: self.name,
+                    read: data[i].readnum + "",
+                    good: data[i].goodnum + "",
+                    share: data[i].sharenum + "",
+                    time: data[i].date.substr(0,10)
+                  })
+                }
+                self.setData({
+                    content: self.data.content
+                })
+            }
+        }
     })
   }
 })

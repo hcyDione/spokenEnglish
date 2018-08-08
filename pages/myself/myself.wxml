@@ -19,5 +19,5 @@
         </view>
         <view class="create">创作了<label>8</label>篇文章</view>
     </view>
-    <mylist></mylist>
+    <mylist content="{{content}}"></mylist>
 </view>

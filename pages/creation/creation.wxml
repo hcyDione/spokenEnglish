@@ -1,7 +1,8 @@
 <!--index.wxml-->
 <view class="container">
-    <nocontent>
+    <nocontent wx:if="{{content.length == 0}}">
         <view slot="footer">还没有作品哦</view>
     </nocontent>
+    <mylist content="{{content}}"></mylist>
     <view class="add" bindtap="doUpload">+</view>
 </view>
